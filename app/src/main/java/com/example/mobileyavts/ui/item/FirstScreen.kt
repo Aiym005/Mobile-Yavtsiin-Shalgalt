@@ -40,6 +40,7 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -337,3 +338,36 @@ fun WordCard(
         }
     }
 }
+
+
+@Preview(showBackground = true, name = "WordCard Mongol")
+@Composable
+fun PreviewWordCardMongol() {
+    WordCard(
+        navController = null,
+        currentWord = Word(id = 1, mongolUg = "Сайн уу", angliUg = "Hello"),
+        mode = DisplayMode.MONGOL
+    )
+}
+
+@Preview(showBackground = true, name = "WordCard English")
+@Composable
+fun PreviewWordCardEnglish() {
+    WordCard(
+        navController = null,
+        currentWord = Word(id = 2, mongolUg = "Ном", angliUg = "Book"),
+        mode = DisplayMode.ENGLISH
+    )
+}
+
+@Preview(showBackground = true, name = "WordCard Both")
+@Composable
+fun PreviewWordCardBoth() {
+    WordCard(
+        navController = null,
+        currentWord = Word(id = 3, mongolUg = "Тоо", angliUg = "Number"),
+        mode = DisplayMode.BOTH
+    )
+}
+
+

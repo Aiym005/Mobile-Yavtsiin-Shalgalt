@@ -20,6 +20,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -99,4 +100,18 @@ fun OptionButtonGroup(
             }
         }
     }
+}
+
+@Preview(showBackground = true, name = "Option Button Group Preview")
+@Composable
+fun PreviewOptionButtonGroup() {
+    OptionButtonGroup(
+        options = listOf(
+            1 to "Монгол үгийг харуулна",
+            2 to "Англи үгийг харуулна",
+            3 to "Хоёуланг нь харуулна"
+        ),
+        selectedOption = 2,
+        onOptionSelected = {}
+    )
 }

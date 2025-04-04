@@ -13,7 +13,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.MaterialTheme.shapes
 import androidx.compose.material3.OutlinedTextField
@@ -26,15 +25,20 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.mobileyavts.R
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 
 @Composable
 fun WordEditScreen(
     navController: NavController,
-    viewModel: WordEditViewModel
+    viewModel: FakeWordEditViewModel
 ) {
     val uiState by viewModel.uiState.collectAsState()
     Column(
@@ -116,4 +120,43 @@ fun WordEditScreen(
             }
         }
     }
+}
+
+
+
+data class WordUiState(
+    val mongolUg: String = "",
+    val angliUg: String = "",
+    val isEntryValid: Boolean = false
+)
+
+class FakeWordEditViewModel : ViewModel() {
+    private val _uiState = MutableStateFlow(
+        WordUiState(
+            mongolUg = "Нохой",
+            angliUg = "Dog",
+            isEntryValid = true
+        )
+    )
+    val uiState: StateFlow<WordUiState> = _uiState
+
+    fun updateUiState(mongol: String, english: String) {
+        _uiState.value = _uiState.value.copy(
+            mongolUg = mongol,
+            angliUg = english,
+            isEntryValid = mongol.isNotBlank() && english.isNotBlank()
+        )
+    }
+
+    fun saveWord() {
+    }
+}
+
+@Preview(showBackground = true, name = "Word Edit Screen Preview")
+@Composable
+fun PreviewWordEditScreen() {
+    val navController = rememberNavController()
+    val fakeViewModel = FakeWordEditViewModel()
+
+    WordEditScreen(navController = navController, viewModel = fakeViewModel)
 }
