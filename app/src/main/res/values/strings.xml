@@ -1,0 +1,42 @@
+<!--
+  ~ Copyright (C) 2023 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     https://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<resources>
+    <string name="app_name">Картны апп</string>
+    <string name="settings">Тохиргоо</string>
+    <string name="before">Өмнө</string>
+    <string name="after">Дараа</string>
+    <string name="add">Нэмэх</string>
+    <string name="update">Шинэчлэх</string>
+    <string name="mongolian">Монгол</string>
+    <string name="english">Англи</string>
+    <string name="delete">Устгах</string>
+    <string name="textfield">Та үгээ оруулна уу</string>
+    <string name="cancel">Болих</string>
+    <string name="save">Хадгалах</string>
+    <string name="sure">Та энэ үгийг устгах уу?</string>
+    <string name="yes">Тийм</string>
+    <string name="no">Үгүй</string>
+    <string name="mongolknown">Монгол үгийг харуулна</string>
+    <string name="anlgiknown">Англи үгийг харуулна</string>
+    <string name="both">Хоёуланг нь ил харуулна</string>
+
+    <string name="quantity_in_stock">Quantity in stock</string>
+    <string name="in_stock">%d in stock</string>
+    <string name="quantity_req">Quantity in Stock*</string>
+    <string name="save_action">Save</string>
+    <string name="sell">Sell</string>
+    <string name="required_fields">*required fields</string>
+</resources>
